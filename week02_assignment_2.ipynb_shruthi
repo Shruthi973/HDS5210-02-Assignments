@@ -1,0 +1,105 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOL6IPV5slJ0/j+NWPD4oJn",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Shruthi973/HDS5210-02-Assignments/blob/main/week02_assignment_2.ipynb_shruthi\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "GtwwcO2w6vCK"
+      },
+      "outputs": [],
+      "source": [
+        "def bmi(weight_kg, height_m):\n",
+        "\n",
+        "    ### BEGIN SOLUTION\n",
+        "    bmi_value = weight_kg / (height_m ** 2)\n",
+        "    ### END SOLUTION\n",
+        "\n",
+        "    return bmi_value\n",
+        "\n",
+        "def weight(bmi, height_m):\n",
+        "\n",
+        "    ### BEGIN SOLUTION\n",
+        "    w = bmi * (height_m ** 2)\n",
+        "    ### END SOLUTION\n",
+        "\n",
+        "    return w\n",
+        "\n",
+        "from math import sqrt\n",
+        "def height(bmi, weight_kg):\n",
+        "\n",
+        "    ### BEGIN SOLUTION\n",
+        "    h = sqrt(weight_kg / bmi)\n",
+        "    ### END SOLUTION\n",
+        "\n",
+        "    return h\n",
+        "\n",
+        "def bmi_us(weight_lb, height_ft, height_in):\n",
+        "\n",
+        "    ### BEGIN SOLUTION\n",
+        "    weight_kg = weight_lb * 0.45454545\n",
+        "    height_m = (height_ft * 12 + height_in) * 0.0254\n",
+        "    answer = weight_kg / (height_m ** 2)\n",
+        "    ### END SOLUTION\n",
+        "\n",
+        "    return answer\n",
+        "\n",
+        "def lose_weight(weight, height, kg_per_week, target_bmi):\n",
+        "\n",
+        "    # Note that the variables you need are already named for you:\n",
+        "    # height is the height in cm\n",
+        "    # weight is the weight in kg\n",
+        "    # kg_per_week is how much the person wants to lose per week\n",
+        "    # target_bmi is the intended target bmi\n",
+        "\n",
+        "    ### BEGIN SOLUTION\n",
+        "    height_m = height / 100\n",
+        "    current_bmi = weight / (height_m ** 2)\n",
+        "    target_weight = target_bmi * (height_m ** 2)\n",
+        "    weight_to_lose = weight - target_weight\n",
+        "    weeks_required = weight_to_lose / kg_per_week\n",
+        "    days = weeks_required * 7\n",
+        "    ### END SOLUTION\n",
+        "\n",
+        "    return days\n",
+        "\n",
+        "def my_function(a, b):\n",
+        "    c = a ** b\n",
+        "    return c\n",
+        "\n",
+        "# You can add test calls here to verify the functions\n",
+        "print(bmi(90.7, 1.82))\n",
+        "print(weight(27.38, 1.82))\n",
+        "print(height(27.38, 90.69))\n",
+        "print(bmi_us(250, 6, 4))\n",
+        "print(lose_weight(90.7, 182, 0.75, 24.9))\n",
+        "print(my_function(2, 8))"
+      ]
+    }
+  ]
+}
